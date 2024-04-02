@@ -68,7 +68,6 @@ function eliminarDelCarrito(id) {
     const producto = carrito[index];
     carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    // Incrementar el stock del producto eliminado del carrito
     const productoOriginal = productos.find((p) => p.id === id);
     if (productoOriginal) {
       productoOriginal.stock++;
@@ -105,7 +104,7 @@ document
     if (confirmacion) {
       localStorage.removeItem("carrito");
       mostrarCarrito();
-      alert("¡Compra realizada con éxito!");
+      alert("Gracias, ¡Compra realizada con éxito!");
     }
   });
 
